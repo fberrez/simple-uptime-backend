@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  sql:
+    image: postgres
+    volumes:
+      - ./containers/sql:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: myAwesomePassword
+      POSTGRES_DB: uptime
+
