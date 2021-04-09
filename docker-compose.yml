@@ -7,4 +7,5 @@ services:
     environment:
       POSTGRES_PASSWORD: myAwesomePassword
       POSTGRES_DB: uptime
-
+    ports:
+      - 5433:5432

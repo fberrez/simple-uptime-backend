@@ -3,8 +3,9 @@ CREATE TYPE route_type AS ENUM ('http','keyword','ping');
 
 CREATE TABLE account (
     id SERIAL PRIMARY KEY,
-    email VARCHAR(256) NOT NULL,
+    email VARCHAR(256) UNIQUE NOT NULL,
     password VARCHAR(2048) NOT NULL,
+    created_at timestamp DEFAULT CURRENT_TIMESTAMP,
     last_connection timestamp
 );
 
