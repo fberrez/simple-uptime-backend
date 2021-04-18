@@ -24,4 +24,6 @@ type AccountRepository interface {
 	CreateAccount(email, password string) (*Account, error)
 	UpdateAccount(id int, email, password string) (*Account, error)
 	DeleteAccount(id int) error
+	GetAccountByEmail(email string) (*Account, error)
+	GetAccountByID(id int) (*Account, error)
 }

@@ -22,6 +22,8 @@ type API struct {
 
 	// accountService is an instance of the service Account
 	accountService *services.Account
+	// loginService is an instance of the service Login
+	loginService *services.Login
 }
 
 // New returns a new instance of API.
@@ -48,6 +50,7 @@ func New(backend backend.Backend) *API {
 		engine:         engine,
 		fizz:           f,
 		accountService: services.NewAccountService(accountRepository),
+		loginService:   services.NewLoginService(accountRepository),
 	}
 
 	// initializes group /account
